@@ -155,7 +155,7 @@ export default function Home() {
                 <circle cx="12" cy="12" r="9" />
                 <path d="M6 14c2-2 4 2 6 0s4 2 6 0" />
               </svg>
-              ABYSSAL
+              NO Deco Life
             </a>
             <nav className="hidden gap-8 text-sm md:flex">
               {navLinks.map((link) => (
@@ -170,20 +170,30 @@ export default function Home() {
       </header>
 
       {/* 主視覺 */}
-      <section
-        className="relative flex min-h-screen items-end overflow-hidden text-white"
-        style={{
-          // 大範圍、柔和過渡的漸層疊加，做出不規則的藍、白、灰色塊；底部收深色以銜接下一區
-          background: [
-            "linear-gradient(180deg, rgba(2,12,20,0) 70%, rgba(2,12,20,0.9) 100%)",
-            "radial-gradient(ellipse 45% 40% at 66% 40%, rgba(248,250,252,0.9) 0%, rgba(248,250,252,0) 70%)",
-            "radial-gradient(ellipse 40% 55% at 92% 78%, rgba(203,213,225,0.55) 0%, rgba(203,213,225,0) 70%)",
-            "radial-gradient(ellipse 55% 45% at 22% 12%, rgba(148,163,184,0.45) 0%, rgba(148,163,184,0) 70%)",
-            "radial-gradient(ellipse 50% 50% at 35% 70%, rgba(37,99,170,0.75) 0%, rgba(37,99,170,0) 70%)",
-            "linear-gradient(150deg, #0f2a4a 0%, #234d7c 40%, #5d7896 70%, #0c2240 100%)",
-          ].join(", "),
-        }}
-      >
+      <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1d4a68] text-white">
+        {/* 底色：橫向的藍、灰、白漸層，底部收深色以銜接下一區 */}
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background: [
+              "linear-gradient(180deg, rgba(2,12,20,0) 72%, rgba(2,12,20,0.9) 100%)",
+              "linear-gradient(90deg, #163d58 0%, #2a5f80 28%, #6f8fa8 50%, #b4c4d0 64%, #6d8ca4 80%, #1d4a68 100%)",
+            ].join(", "),
+          }}
+        />
+        {/* 縱向動態模糊光絲：不同間距的細線疊加，中段淡出 */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            backgroundImage: [
+              "repeating-linear-gradient(90deg, rgba(255,255,255,0) 0 5px, rgba(255,255,255,0.07) 5px 6px, rgba(255,255,255,0) 6px 13px)",
+              "repeating-linear-gradient(90deg, rgba(200,225,240,0) 0 11px, rgba(200,225,240,0.06) 11px 13px, rgba(200,225,240,0) 13px 29px)",
+              "repeating-linear-gradient(90deg, rgba(10,30,50,0) 0 17px, rgba(10,30,50,0.1) 17px 19px, rgba(10,30,50,0) 19px 47px)",
+            ].join(", "),
+            filter: "blur(0.6px)",
+            maskImage: "linear-gradient(180deg, #000 0%, rgba(0,0,0,0.3) 45%, rgba(0,0,0,0.6) 80%, #000 100%)",
+          }}
+        />
         <DiveWatch className="absolute right-[-10%] top-1/2 h-[75vh] -translate-y-1/2 rotate-12 opacity-90 drop-shadow-[0_40px_60px_rgba(0,0,0,0.6)] md:right-[8%]" />
         <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 drop-shadow-[0_2px_12px_rgba(15,23,42,0.45)]">
           <p className="mb-4 text-lg text-sky-100">ABYSSAL D1 潛水電腦錶</p>

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ABYSSAL D1 潛水電腦錶",
+  title: "NDL",
   description: "ABYSSAL D1 潛水電腦錶官方網站",
 };
 
